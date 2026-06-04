@@ -1,0 +1,11 @@
+body{font-family:Arial,sans-serif;margin:0;background:#f5f5f5}
+header{background:#10264f;color:#fff;padding:20px;display:flex;justify-content:space-between}
+nav a{color:#fff;margin-left:15px;text-decoration:none}
+.hero{background:#10264f;color:#fff;text-align:center;padding:80px 20px}
+.btn{background:#d4af37;color:#000;padding:10px 20px;text-decoration:none;border-radius:5px}
+.cards{display:flex;gap:20px;padding:30px}
+.card{background:#fff;padding:20px;flex:1;border-radius:10px}
+.gold{background:#d4af37}
+section{padding:30px}
+.product{background:#fff;padding:15px;margin:10px 0;border-radius:8px}
+footer{background:#10264f;color:#fff;text-align:center;padding:20px}
