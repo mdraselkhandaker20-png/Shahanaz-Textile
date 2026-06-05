@@ -4,294 +4,145 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SK Textile | Custom T-Shirt Printing · Malaysia</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">SK Textile<span>Kuala Lumpur · Bangladesh</span></div>
+  <a href="index.html" class="nav-logo">SK Textile<span>Kuala Lumpur · Bangladesh</span></a>
   <div class="nav-links">
-    <a href="#catalog">Catalog</a>
-    <a href="#custom">Custom order</a>
-    <a href="#order-form">Order form</a>
-    <a href="#contact">Contact</a>
-    <a href="https://wa.me/60123456789" class="nav-wa" target="_blank">WhatsApp us</a>
+    <a href="catalog.html">Catalog</a>
+    <a href="#custom" class="hide-mobile">Custom Order</a>
+    <a href="order.html" class="hide-mobile">Order Form</a>
+    <a href="#contact" class="hide-mobile">Contact</a>
+    <a href="https://wa.me/60123456789" class="nav-wa" target="_blank">WhatsApp Us</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-eyebrow">Quality Apparel · Wholesale &amp; Custom · Malaysia</div>
+  <div class="eyebrow">Quality Apparel · Wholesale &amp; Custom · Malaysia</div>
   <h1>Your design.<br><em>Our craft.</em></h1>
-  <p>Custom t-shirt printing for individuals, teams &amp; businesses. Send your design or choose from our catalog — we handle the rest.</p>
+  <p>Custom t-shirt printing for individuals, teams &amp; businesses. Browse our catalog or bring your own design — we handle everything.</p>
   <div class="hero-btns">
-    <a href="#catalog" class="btn-gold">Browse catalog</a>
-    <a href="#custom" class="btn-outline">Custom order</a>
+    <a href="catalog.html" class="btn-gold">Browse Catalog</a>
+    <a href="#custom" class="btn-outline">Custom Order</a>
   </div>
 </section>
 
-<!-- SYSTEM OVERVIEW -->
-<section class="systems-wrap">
-  <div class="section-eyebrow">How it works</div>
-  <div class="section-title">Two ways to order</div>
-  <div class="systems-grid">
-    <div class="sys-card">
-      <div class="sys-head s1">
-        <div class="sys-num">SYSTEM 1</div>
-        <h2>Shop our catalog</h2>
-        <p>Choose from our ready designs — minimum 10 pcs per order (wholesale pricing)</p>
+<!-- HOW IT WORKS -->
+<section class="section bg-off">
+  <div class="eyebrow" style="text-align:center;">How it works</div>
+  <div class="section-title" style="text-align:center;">Two ways to order</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+
+    <!-- System 1 -->
+    <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border);">
+      <div style="background:var(--navy);padding:22px 24px;">
+        <div style="font-size:10px;color:var(--gold);letter-spacing:3px;margin-bottom:8px;">SYSTEM 1</div>
+        <h2 class="playfair" style="font-size:20px;color:var(--white);font-weight:500;">Shop our catalog</h2>
+        <p style="font-size:13px;color:var(--muted);margin-top:6px;line-height:1.5;">Ready designs — minimum 10 pcs per order (wholesale pricing)</p>
       </div>
-      <div class="sys-steps">
-        <div class="step-item">
-          <div class="step-dot s1-dot">1</div>
-          <div class="step-content"><p>Browse &amp; choose a design</p><span>View all 4 angles of each product</span></div>
+      <div style="background:var(--white);padding:20px 24px;display:flex;flex-direction:column;gap:12px;">
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div style="width:26px;height:26px;border-radius:50%;background:var(--navy);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;flex-shrink:0;">1</div>
+          <div><p style="font-size:13px;font-weight:500;">Browse &amp; choose a design</p><span style="font-size:12px;color:#888;">View all 4 angles of each product</span></div>
         </div>
-        <div class="step-item">
-          <div class="step-dot s1-dot">2</div>
-          <div class="step-content"><p>Select size &amp; quantity (min 10)</p><span>Click Order via WhatsApp</span></div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div style="width:26px;height:26px;border-radius:50%;background:var(--navy);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;flex-shrink:0;">2</div>
+          <div><p style="font-size:13px;font-weight:500;">Select size &amp; quantity</p><span style="font-size:12px;color:#888;">Minimum 10 pcs — click Order via WhatsApp</span></div>
         </div>
-        <div class="step-item">
-          <div class="step-dot s1-dot">3</div>
-          <div class="step-content"><p>We confirm &amp; send payment info</p><span>Pay → produce → deliver nationwide</span></div>
-        </div>
-      </div>
-      <div class="sys-cta">
-        <a href="#catalog" class="s1-cta">Browse catalog →</a>
-      </div>
-    </div>
-    <div class="sys-card">
-      <div class="sys-head s2">
-        <div class="sys-num">SYSTEM 2</div>
-        <h2>Custom order</h2>
-        <p>Your design or we design for you — any style, any fabric, any print</p>
-      </div>
-      <div class="sys-steps">
-        <div class="step-item">
-          <div class="step-dot s2-dot">1</div>
-          <div class="step-content"><p>Send your design or describe idea</p><span>We create a mockup for your approval</span></div>
-        </div>
-        <div class="step-item">
-          <div class="step-dot s2-dot">2</div>
-          <div class="step-content"><p>Approve mockup via WhatsApp</p><span>Fill in our detailed order form</span></div>
-        </div>
-        <div class="step-item">
-          <div class="step-dot s2-dot">3</div>
-          <div class="step-content"><p>Pay → we print, sew &amp; deliver</p><span>Job sheet PDF sent to you</span></div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div style="width:26px;height:26px;border-radius:50%;background:var(--navy);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;flex-shrink:0;">3</div>
+          <div><p style="font-size:13px;font-weight:500;">We confirm &amp; send payment info</p><span style="font-size:12px;color:#888;">Pay → produce → deliver nationwide</span></div>
         </div>
       </div>
-      <div class="sys-cta">
-        <a href="#custom" class="s2-cta">Start custom order →</a>
+      <div style="background:var(--off);padding:14px 24px;">
+        <a href="catalog.html" class="btn-navy" style="width:100%;justify-content:center;">Browse Catalog →</a>
       </div>
     </div>
+
+    <!-- System 2 -->
+    <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border);">
+      <div style="background:var(--gold);padding:22px 24px;">
+        <div style="font-size:10px;color:var(--navy);letter-spacing:3px;margin-bottom:8px;font-weight:500;">SYSTEM 2</div>
+        <h2 class="playfair" style="font-size:20px;color:var(--navy);font-weight:500;">Custom order</h2>
+        <p style="font-size:13px;color:rgba(26,39,68,0.6);margin-top:6px;line-height:1.5;">Your design or we design for you — any style, any fabric, any print</p>
+      </div>
+      <div style="background:var(--white);padding:20px 24px;display:flex;flex-direction:column;gap:12px;">
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div style="width:26px;height:26px;border-radius:50%;background:var(--gold);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;flex-shrink:0;">1</div>
+          <div><p style="font-size:13px;font-weight:500;">Send your design or describe idea</p><span style="font-size:12px;color:#888;">We create a mockup for your approval</span></div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div style="width:26px;height:26px;border-radius:50%;background:var(--gold);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;flex-shrink:0;">2</div>
+          <div><p style="font-size:13px;font-weight:500;">Approve mockup via WhatsApp</p><span style="font-size:12px;color:#888;">Fill in our detailed order form</span></div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div style="width:26px;height:26px;border-radius:50%;background:var(--gold);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;flex-shrink:0;">3</div>
+          <div><p style="font-size:13px;font-weight:500;">Pay → we print, sew &amp; deliver</p><span style="font-size:12px;color:#888;">Job sheet PDF sent to you</span></div>
+        </div>
+      </div>
+      <div style="background:var(--off);padding:14px 24px;">
+        <a href="#custom" class="btn-gold" style="width:100%;justify-content:center;">Start Custom Order →</a>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- CATALOG -->
-<section class="catalog-wrap" id="catalog">
-  <div class="section-eyebrow">System 1 — Brand catalog</div>
-  <div class="section-title">Our ready designs</div>
-  <div class="product-grid" id="productGrid"></div>
-</section>
-
-<!-- PRODUCT MODAL -->
-<div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
-  <div class="modal-box" id="modalBox">
-    <div class="modal-hdr">
-      <span class="modal-hdr-title" id="modalTitle">Product</span>
-      <button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
-    </div>
-    <div class="modal-content">
-      <div class="modal-preview">
-        <div class="main-preview" id="mainPreview"></div>
-        <div class="thumb-grid" id="thumbGrid"></div>
-      </div>
-      <div class="modal-details">
-        <div class="modal-pname" id="modalPname"></div>
-        <div class="modal-pdesc" id="modalPdesc"></div>
-        <div class="modal-pfab" id="modalPfab"></div>
-        <div class="qty-wrap">
-          <label>Quantity (minimum 10 pcs)</label>
-          <div class="qty-ctrl">
-            <button class="qty-btn" onclick="changeQty(-5)">−</button>
-            <div class="qty-num" id="qtyNum">10</div>
-            <button class="qty-btn" onclick="changeQty(5)">+</button>
-          </div>
-        </div>
-        <button class="modal-wa-btn" onclick="orderCatalog()">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Order via WhatsApp
-        </button>
-      </div>
-    </div>
+<!-- CATALOG PREVIEW -->
+<section class="section bg-white" id="catalog-preview">
+  <div class="eyebrow">System 1 — Brand Catalog</div>
+  <div class="section-title">Featured products</div>
+  <div class="product-grid" id="featuredGrid"></div>
+  <div style="text-align:center;margin-top:28px;">
+    <a href="catalog.html" class="btn-gold">More Catalog →</a>
   </div>
-</div>
+</section>
 
 <!-- CUSTOM ORDER -->
-<section class="custom-wrap" id="custom">
-  <div class="section-eyebrow">System 2 — Custom order</div>
+<section class="section bg-off" id="custom">
+  <div class="eyebrow">System 2 — Custom Order</div>
   <div class="section-title">How would you like to order?</div>
-  <div class="custom-card">
-    <div class="custom-hdr">
-      <div class="custom-hdr-icon">✦</div>
+  <div style="border-radius:12px;overflow:hidden;border:1px solid rgba(201,168,76,0.4);">
+    <div style="background:var(--gold);padding:20px 28px;display:flex;align-items:center;gap:16px;">
+      <div style="font-size:28px;">✦</div>
       <div>
-        <h2>Custom printing &amp; design service</h2>
-        <p>Any quantity · Any style · Any fabric · Nationwide delivery</p>
+        <h2 class="playfair" style="font-size:20px;color:var(--navy);font-weight:500;">Custom printing &amp; design service</h2>
+        <p style="font-size:13px;color:rgba(26,39,68,0.6);margin-top:3px;">Any quantity · Any style · Any fabric · Nationwide delivery</p>
       </div>
     </div>
-    <div class="custom-opts">
-      <div class="copt">
-        <div class="copt-icon">↑</div>
-        <h3>I have my design</h3>
-        <p>Send us your artwork, logo or file — we print it exactly as you want on your chosen fabric and style. Use our order form below for full details.</p>
-        <button class="copt-btn" onclick="waCustom('I have my own design and would like to place a custom order with SK Textile. Please guide me on the next steps.')">
+    <div style="display:grid;grid-template-columns:1fr 1fr;">
+      <div style="padding:24px 28px;background:var(--white);border-top:1px solid var(--border);">
+        <div style="font-size:26px;color:var(--gold);margin-bottom:10px;">↑</div>
+        <h3 style="font-size:15px;font-weight:500;color:var(--navy);margin-bottom:8px;">I have my design</h3>
+        <p style="font-size:13px;color:#666;line-height:1.6;margin-bottom:16px;">Send us your artwork, logo or file — we print it exactly as you want. Use the order form for full details.</p>
+        <button class="btn-navy" onclick="openWA('Hi SK Textile! I have my own design and would like to place a custom order. Please guide me.')">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Send design via WhatsApp
         </button>
       </div>
-      <div class="copt" style="border-left:1px solid var(--border);">
-        <div class="copt-icon">✎</div>
-        <h3>Design it for me</h3>
-        <p>Share your idea, theme or reference image — we create a full mockup for your approval before anything is produced or paid for.</p>
-        <button class="copt-btn" onclick="waCustom('I need a custom design created for my t-shirt order. I would like to discuss my idea with SK Textile.')">
+      <div style="padding:24px 28px;background:var(--white);border-top:1px solid var(--border);border-left:1px solid var(--border);">
+        <div style="font-size:26px;color:var(--gold);margin-bottom:10px;">✎</div>
+        <h3 style="font-size:15px;font-weight:500;color:var(--navy);margin-bottom:8px;">Design it for me</h3>
+        <p style="font-size:13px;color:#666;line-height:1.6;margin-bottom:16px;">Share your idea or reference — we create a mockup for your approval before anything is produced or paid.</p>
+        <button class="btn-navy" onclick="openWA('Hi SK Textile! I need a custom design created. I have an idea I would like to discuss.')">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Discuss your idea
         </button>
       </div>
     </div>
-    <div class="custom-note">
+    <div style="background:var(--navy);padding:14px 28px;display:flex;align-items:center;gap:10px;">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-      <span>After WhatsApp chat — fill in the order form below. We send you a full job sheet PDF with mockup before any payment is required.</span>
+      <span style="font-size:12px;color:var(--muted);">After WhatsApp chat — fill in the <a href="order.html" style="color:var(--gold);">order form</a>. We send a full job sheet PDF with mockup before any payment.</span>
     </div>
   </div>
 </section>
 
-<!-- ORDER FORM -->
-<section class="form-wrap" id="order-form">
-  <div class="section-eyebrow">Order form</div>
-  <div class="section-title">Fill in your order details</div>
-  <div class="form-grid">
-    <div class="form-left fl">
-      <div class="sec-lbl-form">Customer info</div>
-      <div class="field-group fl"><label>Full name</label><input type="text" id="fName" placeholder="Ahmad bin Ali"></div>
-      <div class="field-group fl"><label>WhatsApp number</label><input type="text" id="fWA" placeholder="01X-XXXXXXXX"></div>
-      <div class="field-group fl"><label>State / City</label><input type="text" id="fCity" placeholder="Ampang, KL"></div>
-
-      <div class="sec-lbl-form">T-shirt details</div>
-      <div class="row2">
-        <div class="field-group fl"><label>Type</label>
-          <select id="fType"><option>Round neck</option><option>Polo</option><option>V-neck</option><option>Hoodie</option></select>
-        </div>
-        <div class="field-group fl"><label>Fabric</label>
-          <select id="fFabric"><option>Cotton</option><option>Polyester</option><option>Dri-fit</option><option>Cotton blend</option></select>
-        </div>
-      </div>
-      <div class="row2">
-        <div class="field-group fl"><label>Shirt colour</label>
-          <select id="fColor"><option>Black</option><option>White</option><option>Navy blue</option><option>Red</option><option>Grey</option><option>Green</option><option>Yellow</option><option>Custom</option></select>
-        </div>
-        <div class="field-group fl"><label>Neck colour</label>
-          <select id="fNeck"><option>Same as shirt</option><option>White</option><option>Black</option><option>Red</option><option>Navy</option></select>
-        </div>
-      </div>
-
-      <div class="sec-lbl-form">Sizes &amp; quantity</div>
-      <div class="size-grid-form">
-        <div class="size-item-form"><label>XS</label><input type="number" min="0" value="0" id="sXS" oninput="updateFormTotal()"></div>
-        <div class="size-item-form"><label>S</label><input type="number" min="0" value="0" id="sS" oninput="updateFormTotal()"></div>
-        <div class="size-item-form"><label>M</label><input type="number" min="0" value="0" id="sM" oninput="updateFormTotal()"></div>
-        <div class="size-item-form"><label>L</label><input type="number" min="0" value="0" id="sL" oninput="updateFormTotal()"></div>
-        <div class="size-item-form"><label>XL</label><input type="number" min="0" value="0" id="sXL" oninput="updateFormTotal()"></div>
-        <div class="size-item-form"><label>XXL</label><input type="number" min="0" value="0" id="sXXL" oninput="updateFormTotal()"></div>
-      </div>
-      <div class="total-badge-form" id="formTotal">Total: 0 pcs</div>
-    </div>
-
-    <div class="form-right fr">
-      <div class="sec-lbl-form">Design / mockup upload</div>
-      <div class="upload-box" onclick="document.getElementById('fFile').click()">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-        <p>Click to upload design or mockup<br><small>JPG, PNG, PDF — max 5MB</small></p>
-        <input type="file" id="fFile" accept="image/*,.pdf" style="display:none" onchange="handleUpload(this)">
-      </div>
-      <img id="fImgPreview" style="display:none;width:100%;max-height:120px;object-fit:contain;border-radius:8px;border:1px solid var(--border);" alt="Design preview">
-      <div id="fPdfNote" style="display:none;font-size:12px;color:#888;background:var(--off);padding:8px 12px;border-radius:6px;"></div>
-
-      <div class="sec-lbl-form">Print location</div>
-      <div class="print-opts" id="printOpts">
-        <div class="popt active" data-val="Front only">Front only</div>
-        <div class="popt" data-val="Back only">Back only</div>
-        <div class="popt" data-val="Front &amp; back">Front &amp; back</div>
-      </div>
-
-      <div class="field-group fr"><label>Design notes</label>
-        <textarea id="fNotes" placeholder="Logo placement, colours, text, special requests..."></textarea>
-      </div>
-
-      <div class="info-note">Payment is required only after order confirmation. We will contact you via WhatsApp first.</div>
-
-      <button class="preview-btn" onclick="showOrderPreview()">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-        Preview &amp; confirm order
-      </button>
-    </div>
-  </div>
-</section>
-
-<!-- ORDER PREVIEW -->
-<div class="preview-panel" id="previewPanel">
-  <div style="font-size:11px;color:var(--gold);letter-spacing:2px;margin-bottom:16px;text-align:center;">ORDER SUMMARY — PLEASE CONFIRM BEFORE SENDING</div>
-  <div class="order-card-preview">
-    <div class="ocp-hdr">
-      <div class="ocp-brand">SK Textile</div>
-      <div class="ocp-no" id="ocpNo"></div>
-    </div>
-    <div class="ocp-body">
-      <div class="ocp-2col">
-        <div>
-          <div class="info-sec-title">CUSTOMER</div>
-          <div class="info-line"><span class="lbl">Name</span><span class="val" id="ocpName">-</span></div>
-          <div class="info-line"><span class="lbl">WhatsApp</span><span class="val" id="ocpWA">-</span></div>
-          <div class="info-line"><span class="lbl">Location</span><span class="val" id="ocpCity">-</span></div>
-        </div>
-        <div>
-          <div class="info-sec-title">T-SHIRT SPECS</div>
-          <div class="info-line"><span class="lbl">Type</span><span class="val" id="ocpType">-</span></div>
-          <div class="info-line"><span class="lbl">Fabric</span><span class="val" id="ocpFabric">-</span></div>
-          <div class="info-line"><span class="lbl">Colour</span><span class="val" id="ocpColor">-</span></div>
-          <div class="info-line"><span class="lbl">Neck</span><span class="val" id="ocpNeck">-</span></div>
-          <div class="info-line"><span class="lbl">Print</span><span class="val" id="ocpPrint">-</span></div>
-        </div>
-      </div>
-      <div class="info-sec-title">SIZES &amp; QUANTITY</div>
-      <table class="size-tbl" id="ocpSizeTable"></table>
-      <div class="ocp-2col" style="margin-top:16px;margin-bottom:0;">
-        <div>
-          <div class="info-sec-title">DESIGN / MOCKUP</div>
-          <div class="design-box" id="ocpDesignBox"><span style="font-size:12px;color:#aaa;">No file uploaded</span></div>
-        </div>
-        <div>
-          <div class="info-sec-title">NOTES</div>
-          <div class="notes-box" id="ocpNotes">-</div>
-        </div>
-      </div>
-    </div>
-    <div class="ocp-footer">
-      <button class="wa-btn-final" onclick="finalSendWA()">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Send to WhatsApp
-      </button>
-      <button class="pdf-btn-final" onclick="downloadJobSheet()">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Download job sheet PDF
-      </button>
-    </div>
-  </div>
-  <div style="font-size:12px;color:#aaa;text-align:center;margin-top:14px;">After sending via WhatsApp, please also send your design file directly in the chat.</div>
-</div>
-
-<!-- WA FLOAT BAR -->
-<button class="wa-float-bar" id="contact" onclick="waCustom('Hi SK Textile! I would like to enquire about your products and services.')">
+<!-- WA BAR -->
+<button class="wa-bar" id="contact" onclick="openWA('Hi SK Textile! I would like to enquire about your products and services.')">
   <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   <span>Chat with us on WhatsApp · Ampang, Kuala Lumpur</span>
 </button>
@@ -300,290 +151,26 @@
   <p>© 2025 <span>SK Textile</span> · Ampang, Kuala Lumpur · Delivery nationwide Malaysia</p>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="js/shared.js"></script>
 <script>
-const WA = '60123456789';
-const SIZES = ['XS','S','M','L','XL','XXL'];
-const VIEWS = ['Front','Back','Left','Right'];
-
-const COLORS = {
-  'Black':'#1a1a1a','White':'#f5f5f0','Navy blue':'#1a2744',
-  'Red':'#9b2226','Grey':'#6c757d','Green':'#2d6a4f',
-  'Yellow':'#e9c46a','Custom':'#888'
-};
-
-const products = [
-  {name:'Classic crew tee',fab:'100% Cotton',desc:'Everyday round neck tee — perfect for corporate, event, or casual wear. Heavy-weight cotton, pre-shrunk.',min:10,color:'#1a1a1a'},
-  {name:'Performance polo',fab:'Dri-fit Polyester',desc:'Moisture-wicking polo with structured collar. Ideal for sports teams, corporate uniforms, and activewear.',min:10,color:'#1a2744'},
-  {name:'Premium white tee',fab:'100% Cotton',desc:'Heavyweight white round neck. Clean bright base for vibrant, bold prints. Long-lasting fabric.',min:10,color:'#e8e4d8'},
-  {name:'Maroon corporate tee',fab:'Cotton blend',desc:'Rich maroon tone with a smart casual fit. Great for team uniforms, events, and branded apparel.',min:10,color:'#7b2d2d'},
-];
-
-let curProd = 0, curQty = 10, curView = 0;
-let uploadedDataUrl = null, uploadedFile = null, isPDF = false;
-
-function shirtSVG(color, label, size=90){
-  const h = size*1.08;
-  return `<svg viewBox="0 0 120 130" width="${size}" height="${h}" xmlns="http://www.w3.org/2000/svg">
-    <path d="M25 30 L5 55 L20 60 L18 125 L102 125 L100 60 L115 55 L95 30 Q80 20 70 18 Q65 28 60 30 Q55 28 50 18 Q40 20 25 30Z" fill="${color}" stroke="#c9a84c55" stroke-width="1"/>
-    <text x="60" y="75" text-anchor="middle" font-size="11" fill="#c9a84c" font-family="DM Sans,sans-serif" font-weight="500">${label}</text>
-  </svg>`;
-}
-
-function renderProducts(){
-  const grid = document.getElementById('productGrid');
-  grid.innerHTML = products.map((p,i)=>`
-    <div class="prod-card">
-      <div class="prod-img" onclick="openModal(${i})">
-        ${shirtSVG(p.color, VIEWS[0])}
-        <div class="view-tabs">
-          ${VIEWS.map((_,vi)=>`<div class="vtab${vi===0?' active':''}"></div>`).join('')}
-        </div>
-      </div>
-      <div class="prod-info">
-        <div class="prod-name">${p.name}</div>
-        <div class="prod-fab">${p.fab}</div>
-        <div class="prod-min">Min ${p.min} pcs</div>
-      </div>
-      <button class="prod-btn" onclick="openModal(${i})">View &amp; order</button>
+// Render 4 featured products on homepage
+const featured = PRODUCTS.slice(0,4);
+document.getElementById('featuredGrid').innerHTML = featured.map(p => `
+  <div class="prod-card">
+    <div class="prod-img">
+      ${shirtSVG(p.color, VIEWS[0])}
+      <div class="view-tabs">${VIEWS.map((_,i)=>`<div class="vtab${i===0?' active':''}"></div>`).join('')}</div>
     </div>
-  `).join('');
-}
-
-function openModal(i){
-  curProd=i; curQty=10; curView=0;
-  const p=products[i];
-  document.getElementById('modalTitle').textContent=p.name;
-  document.getElementById('modalPname').textContent=p.name;
-  document.getElementById('modalPdesc').textContent=p.desc;
-  document.getElementById('modalPfab').textContent='Fabric: '+p.fab+' · Min '+p.min+' pcs';
-  document.getElementById('qtyNum').textContent=curQty;
-  renderMainView(p,0);
-  renderThumbs(p);
-  document.getElementById('modalOverlay').classList.add('open');
-  document.body.style.overflow='hidden';
-}
-
-function renderMainView(p,vi){
-  document.getElementById('mainPreview').innerHTML=shirtSVG(p.color,VIEWS[vi],100);
-}
-
-function renderThumbs(p){
-  document.getElementById('thumbGrid').innerHTML=VIEWS.map((v,vi)=>`
-    <div>
-      <div class="thumb-item${vi===curView?' active':''}" onclick="switchView(${vi})">
-        ${shirtSVG(p.color,v[0],26)}
-      </div>
-      <div class="thumb-label">${v}</div>
+    <div class="prod-info">
+      <div class="prod-name">${p.name}</div>
+      <div class="prod-fab">${p.fab}</div>
+      <div class="prod-min">Min ${p.min} pcs</div>
     </div>
-  `).join('');
-}
-
-function switchView(vi){
-  curView=vi;
-  renderMainView(products[curProd],vi);
-  renderThumbs(products[curProd]);
-}
-
-function closeModal(){
-  document.getElementById('modalOverlay').classList.remove('open');
-  document.body.style.overflow='';
-}
-
-function handleOverlayClick(e){
-  if(e.target===document.getElementById('modalOverlay')) closeModal();
-}
-
-function changeQty(d){
-  curQty=Math.max(10,curQty+d);
-  document.getElementById('qtyNum').textContent=curQty;
-}
-
-function orderCatalog(){
-  const p=products[curProd];
-  const msg=`*New catalog order — SK Textile*\n\nProduct: ${p.name}\nFabric: ${p.fab}\nQuantity: ${curQty} pcs\n\nPlease send me the order form and payment details.`;
-  window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank');
-}
-
-function waCustom(msg){
-  window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank');
-}
-
-document.getElementById('printOpts').addEventListener('click',function(e){
-  const o=e.target.closest('.popt');
-  if(!o) return;
-  document.querySelectorAll('.popt').forEach(x=>x.classList.remove('active'));
-  o.classList.add('active');
-});
-
-function updateFormTotal(){
-  let t=0;
-  SIZES.forEach(s=>{t+=Math.max(0,parseInt(document.getElementById('s'+s).value)||0);});
-  document.getElementById('formTotal').textContent='Total: '+t+' pcs';
-}
-
-function handleUpload(input){
-  const file=input.files[0];
-  if(!file) return;
-  uploadedFile=file;
-  isPDF=file.type==='application/pdf';
-  if(isPDF){
-    document.getElementById('fImgPreview').style.display='none';
-    const n=document.getElementById('fPdfNote');
-    n.style.display='block';
-    n.textContent='PDF selected: '+file.name;
-    uploadedDataUrl=null;
-  } else {
-    document.getElementById('fPdfNote').style.display='none';
-    const r=new FileReader();
-    r.onload=function(e){
-      uploadedDataUrl=e.target.result;
-      const img=document.getElementById('fImgPreview');
-      img.src=uploadedDataUrl;
-      img.style.display='block';
-    };
-    r.readAsDataURL(file);
-  }
-}
-
-function getOrderNo(){
-  return 'SKT-'+String(Math.floor(Math.random()*9000)+1000);
-}
-
-function showOrderPreview(){
-  const name=document.getElementById('fName').value.trim();
-  const wa=document.getElementById('fWA').value.trim();
-  if(!name||!wa){alert('Please enter customer name and WhatsApp number.');return;}
-  let total=0;
-  SIZES.forEach(s=>{total+=Math.max(0,parseInt(document.getElementById('s'+s).value)||0);});
-  if(total===0){alert('Please enter quantity for at least one size.');return;}
-
-  const no=getOrderNo();
-  document.getElementById('ocpNo').textContent='ORDER #'+no;
-  document.getElementById('ocpName').textContent=name;
-  document.getElementById('ocpWA').textContent=wa;
-  document.getElementById('ocpCity').textContent=document.getElementById('fCity').value||'-';
-  document.getElementById('ocpType').textContent=document.getElementById('fType').value;
-  document.getElementById('ocpFabric').textContent=document.getElementById('fFabric').value;
-  document.getElementById('ocpColor').textContent=document.getElementById('fColor').value;
-  document.getElementById('ocpNeck').textContent=document.getElementById('fNeck').value;
-  document.getElementById('ocpPrint').textContent=document.querySelector('.popt.active')?.dataset.val||'-';
-  document.getElementById('ocpNotes').textContent=document.getElementById('fNotes').value||'No notes';
-
-  let rows='<tr>'+SIZES.map(s=>`<th>${s}</th>`).join('')+'</tr><tr>';
-  let t=0;
-  SIZES.forEach(s=>{const q=parseInt(document.getElementById('s'+s).value)||0;t+=q;rows+=`<td>${q}</td>`;});
-  rows+=`</tr><tr><td colspan="6" style="font-weight:500;background:#f8f7f4;text-align:center;">Total: ${t} pcs</td></tr>`;
-  document.getElementById('ocpSizeTable').innerHTML=rows;
-
-  const db=document.getElementById('ocpDesignBox');
-  if(uploadedDataUrl){
-    db.innerHTML=`<img src="${uploadedDataUrl}" style="max-width:100%;max-height:100%;object-fit:contain;" alt="Design">`;
-  } else if(isPDF&&uploadedFile){
-    db.innerHTML=`<div style="text-align:center;"><div style="font-size:28px;color:#c9a84c;">📄</div><div style="font-size:11px;color:#888;margin-top:4px;">${uploadedFile.name}</div></div>`;
-  } else {
-    db.innerHTML='<span style="font-size:12px;color:#aaa;">No file uploaded</span>';
-  }
-
-  const pp=document.getElementById('previewPanel');
-  pp.style.display='block';
-  pp.scrollIntoView({behavior:'smooth'});
-}
-
-function finalSendWA(){
-  const name=document.getElementById('ocpName').textContent;
-  const wa=document.getElementById('ocpWA').textContent;
-  const city=document.getElementById('ocpCity').textContent;
-  const no=document.getElementById('ocpNo').textContent;
-  const type=document.getElementById('ocpType').textContent;
-  const fabric=document.getElementById('ocpFabric').textContent;
-  const color=document.getElementById('ocpColor').textContent;
-  const neck=document.getElementById('ocpNeck').textContent;
-  const print=document.getElementById('ocpPrint').textContent;
-  const notes=document.getElementById('ocpNotes').textContent;
-  let sizeStr='',total=0;
-  SIZES.forEach(s=>{const q=parseInt(document.getElementById('s'+s).value)||0;if(q>0){sizeStr+=s+' x'+q+'  ';total+=q;}});
-  const fileNote=uploadedFile?(isPDF?'PDF: '+uploadedFile.name+' — will send separately':'Design image — will send separately'):'No design file';
-  const msg=`*${no} — SK Textile*\n\n*Customer*\nName: ${name}\nWhatsApp: ${wa}\nLocation: ${city}\n\n*T-Shirt*\nType: ${type}\nFabric: ${fabric}\nColour: ${color}\nNeck: ${neck}\nPrint: ${print}\n\n*Sizes*\n${sizeStr.trim()}\nTotal: ${total} pcs\n\n*Design*\n${fileNote}\n\n*Notes*\n${notes}`;
-  window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank');
-}
-
-function downloadJobSheet(){
-  const {jsPDF}=window.jspdf;
-  if(!jsPDF){alert('PDF loading, please try again in a moment.');return;}
-  const doc=new jsPDF({unit:'mm',format:'a4'});
-  const navy=[26,39,68],gold=[201,168,76],off=[248,247,244];
-  doc.setFillColor(...navy);doc.rect(0,0,210,30,'F');
-  doc.setTextColor(...gold);doc.setFontSize(20);doc.setFont('helvetica','bold');
-  doc.text('SK Textile',14,13);
-  doc.setFontSize(9);doc.setFont('helvetica','normal');
-  doc.text('CUSTOM T-SHIRT PRINTING · KUALA LUMPUR · MALAYSIA',14,21);
-  doc.setTextColor(180,180,180);
-  doc.text(document.getElementById('ocpNo').textContent,196,13,{align:'right'});
-  doc.text(new Date().toLocaleDateString('en-MY'),196,21,{align:'right'});
-  doc.setFillColor(...gold);doc.rect(0,30,210,2,'F');
-  let y=38;
-  const sections=[
-    {title:'CUSTOMER INFO',rows:[
-      ['Name',document.getElementById('ocpName').textContent],
-      ['WhatsApp',document.getElementById('ocpWA').textContent],
-      ['Location',document.getElementById('ocpCity').textContent],
-    ]},
-    {title:'T-SHIRT DETAILS',rows:[
-      ['Type',document.getElementById('ocpType').textContent],
-      ['Fabric',document.getElementById('ocpFabric').textContent],
-      ['Colour',document.getElementById('ocpColor').textContent],
-      ['Neck colour',document.getElementById('ocpNeck').textContent],
-      ['Print location',document.getElementById('ocpPrint').textContent],
-    ]},
-  ];
-  sections.forEach(sec=>{
-    doc.setFillColor(...navy);doc.rect(14,y,182,7,'F');
-    doc.setTextColor(...gold);doc.setFontSize(8);doc.setFont('helvetica','bold');
-    doc.text(sec.title,16,y+5);
-    y+=9;
-    sec.rows.forEach(row=>{
-      doc.setTextColor(100,100,100);doc.setFont('helvetica','normal');doc.setFontSize(9);
-      doc.text(row[0],16,y);
-      doc.setTextColor(30,30,30);doc.setFont('helvetica','bold');
-      doc.text(row[1],90,y);
-      y+=6;
-    });
-    y+=4;
-  });
-  doc.setFillColor(...navy);doc.rect(14,y,182,7,'F');
-  doc.setTextColor(...gold);doc.setFontSize(8);doc.setFont('helvetica','bold');
-  doc.text('SIZES & QUANTITY',16,y+5);y+=9;
-  const cellW=26;
-  doc.setFillColor(...off);doc.rect(14,y,182,8,'F');
-  SIZES.forEach((s,i)=>{doc.setTextColor(80,80,80);doc.setFont('helvetica','bold');doc.setFontSize(9);doc.text(s,16+i*cellW,y+5);});
-  y+=8;
-  let total=0;
-  SIZES.forEach((s,i)=>{const q=parseInt(document.getElementById('s'+s).value)||0;total+=q;doc.setTextColor(30,30,30);doc.setFont('helvetica','normal');doc.text(String(q),16+i*cellW,y+5);});
-  doc.setFont('helvetica','bold');doc.setTextColor(...navy);doc.text('Total: '+total+' pcs',192,y+5,{align:'right'});
-  y+=12;
-  doc.setFillColor(...navy);doc.rect(14,y,182,7,'F');
-  doc.setTextColor(...gold);doc.setFontSize(8);doc.setFont('helvetica','bold');
-  doc.text('DESIGN NOTES',16,y+5);y+=9;
-  doc.setTextColor(40,40,40);doc.setFont('helvetica','normal');doc.setFontSize(9);
-  const noteLines=doc.splitTextToSize(document.getElementById('ocpNotes').textContent,178);
-  doc.text(noteLines,16,y);y+=noteLines.length*5+6;
-  if(uploadedDataUrl){
-    doc.setFillColor(...navy);doc.rect(14,y,182,7,'F');
-    doc.setTextColor(...gold);doc.setFontSize(8);doc.setFont('helvetica','bold');
-    doc.text('DESIGN / MOCKUP',16,y+5);y+=9;
-    try{doc.addImage(uploadedDataUrl,'JPEG',14,y,80,60);y+=66;}catch(e){}
-  } else if(isPDF&&uploadedFile){
-    doc.setTextColor(100,100,100);doc.setFontSize(9);
-    doc.text('Design file: '+uploadedFile.name+' (PDF — sent separately via WhatsApp)',16,y);y+=8;
-  }
-  doc.setFillColor(...navy);doc.rect(0,278,210,19,'F');
-  doc.setTextColor(...gold);doc.setFontSize(8);doc.setFont('helvetica','normal');
-  doc.text('SK Textile · Ampang, Kuala Lumpur · Generated '+new Date().toLocaleString('en-MY'),105,289,{align:'center'});
-  doc.save('SK-Textile-'+document.getElementById('ocpNo').textContent+'.pdf');
-}
-
-renderProducts();
+    <div class="prod-actions">
+      <a href="order.html?product=${p.id}" class="btn-gold" style="flex:1;justify-content:center;padding:9px;font-size:12px;">Order</a>
+    </div>
+  </div>
+`).join('');
 </script>
 </body>
 </html>

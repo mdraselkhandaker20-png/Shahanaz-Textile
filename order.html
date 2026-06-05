@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Form | SK Textile</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>
+.order-header{background:var(--navy);padding:40px 40px 32px;border-bottom:3px solid var(--gold);}
+.order-header h1{font-family:'Playfair Display',serif;font-size:36px;color:var(--white);font-weight:500;}
+.order-header p{color:var(--muted);font-size:14px;margin-top:8px;}
+.form-wrap{padding:40px;background:var(--off);}
+.form-card{background:var(--white);border-radius:16px;border:1px solid var(--border);overflow:hidden;max-width:860px;margin:0 auto;}
+.form-section{padding:28px 32px;border-bottom:1px solid var(--border);}
+.form-section:last-child{border-bottom:none;}
+.form-section-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:500;color:var(--navy);margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+.form-section-title .num{width:28px;height:28px;border-radius:50%;background:var(--navy);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;font-family:'DM Sans',sans-serif;flex-shrink:0;}
+
+/* ITEM ROWS */
+.items-container{display:flex;flex-direction:column;gap:16px;}
+.item-row{border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+.item-row-header{background:var(--navy);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;}
+.item-row-header span{color:var(--gold);font-size:13px;font-weight:500;}
+.item-row-body{padding:16px;display:flex;flex-direction:column;gap:14px;}
+.item-toggle{background:none;border:none;cursor:pointer;color:var(--muted);font-size:11px;padding:4px 8px;border-radius:4px;border:1px solid rgba(201,168,76,0.3);color:var(--gold);}
+.item-toggle:hover{background:rgba(201,168,76,0.1);}
+.size-qty-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;}
+.sq-item{display:flex;flex-direction:column;gap:4px;align-items:center;}
+.sq-item label{font-size:11px;color:#666;font-weight:500;}
+.sq-item input{width:100%;text-align:center;padding:8px 4px;border:1px solid var(--border);border-radius:6px;font-size:14px;font-weight:500;color:var(--navy);background:var(--off);}
+.sq-item input:focus{outline:none;border-color:var(--gold);}
+.item-subtotal{background:var(--navy);color:var(--gold);padding:8px 16px;font-size:13px;font-weight:500;text-align:right;}
+
+.add-item-btn{border:1.5px dashed rgba(201,168,76,0.4);border-radius:10px;padding:14px;text-align:center;cursor:pointer;background:transparent;width:100%;color:var(--gold);font-size:13px;font-weight:500;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px;}
+.add-item-btn:hover{border-color:var(--gold);background:rgba(201,168,76,0.05);}
+
+.grand-total{background:var(--navy);border-radius:10px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;}
+.grand-total .label{color:var(--muted);font-size:14px;}
+.grand-total .value{color:var(--gold);font-size:20px;font-weight:500;font-family:'Playfair Display',serif;}
+
+/* MOCKUP PREVIEW PANEL */
+.mockup-panel{background:var(--off);border:1px solid var(--border);border-radius:10px;padding:16px;display:flex;flex-direction:column;align-items:center;gap:10px;}
+.mockup-panel p{font-size:11px;color:#888;text-align:center;}
+.mockup-large{width:130px;height:141px;}
+.color-swatches{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;}
+.swatch{width:22px;height:22px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:border-color .2s;}
+.swatch.active{border-color:var(--gold);}
+
+/* ORDER PREVIEW */
+.preview-section{padding:32px 40px;display:none;background:var(--white);}
+.preview-label{font-size:11px;color:var(--gold);letter-spacing:2px;text-align:center;margin-bottom:16px;}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">SK Textile<span>Kuala Lumpur · Bangladesh</span></a>
+  <div class="nav-links">
+    <a href="catalog.html">Catalog</a>
+    <a href="index.html#custom" class="hide-mobile">Custom Order</a>
+    <a href="order.html" class="active hide-mobile">Order Form</a>
+    <a href="index.html#contact" class="hide-mobile">Contact</a>
+    <a href="https://wa.me/60123456789" class="nav-wa" target="_blank">WhatsApp Us</a>
+  </div>
+</nav>
+
+<div class="order-header">
+  <div class="eyebrow">Place your order</div>
+  <h1>Order Form</h1>
+  <p>Fill in all details below — you can order multiple items &amp; types in one submission</p>
+</div>
+
+<div class="form-wrap">
+<div class="form-card">
+
+  <!-- SECTION 1: CUSTOMER -->
+  <div class="form-section">
+    <div class="form-section-title"><div class="num">1</div> Customer Information</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+      <div class="field"><label>Full name *</label><input type="text" id="cName" placeholder="Ahmad bin Ali"></div>
+      <div class="field"><label>WhatsApp number *</label><input type="text" id="cWA" placeholder="01X-XXXXXXXX"></div>
+      <div class="field"><label>State / City *</label><input type="text" id="cCity" placeholder="Ampang, KL"></div>
+    </div>
+    <div class="field" style="margin-top:12px;">
+      <label>Delivery address</label>
+      <input type="text" id="cAddr" placeholder="Full delivery address">
+    </div>
+  </div>
+
+  <!-- SECTION 2: ITEMS -->
+  <div class="form-section">
+    <div class="form-section-title"><div class="num">2</div> Order Items</div>
+    <div style="display:grid;grid-template-columns:1fr 280px;gap:20px;align-items:start;">
+      <div>
+        <div class="items-container" id="itemsContainer"></div>
+        <button class="add-item-btn" onclick="addItem()" style="margin-top:12px;">
+          + Add another item type
+        </button>
+        <div class="grand-total" style="margin-top:16px;">
+          <span class="label">Grand total</span>
+          <span class="value" id="grandTotal">0 pcs</span>
+        </div>
+      </div>
+      <!-- MOCKUP PANEL -->
+      <div class="mockup-panel">
+        <p style="font-size:12px;color:var(--navy);font-weight:500;">Live mockup preview</p>
+        <div id="mockupSvg"></div>
+        <p>Select shirt colour below</p>
+        <div class="color-swatches" id="colorSwatches">
+          <div class="swatch active" style="background:#1a1a1a;" data-c="#1a1a1a" data-n="Black" onclick="pickColor(this)"></div>
+          <div class="swatch" style="background:#f0ede8;border-color:#ccc;" data-c="#f0ede8" data-n="White" onclick="pickColor(this)"></div>
+          <div class="swatch" style="background:#1a2744;" data-c="#1a2744" data-n="Navy" onclick="pickColor(this)"></div>
+          <div class="swatch" style="background:#9b2226;" data-c="#9b2226" data-n="Red" onclick="pickColor(this)"></div>
+          <div class="swatch" style="background:#6c757d;" data-c="#6c757d" data-n="Grey" onclick="pickColor(this)"></div>
+          <div class="swatch" style="background:#2d6a4f;" data-c="#2d6a4f" data-n="Green" onclick="pickColor(this)"></div>
+          <div class="swatch" style="background:#2c5f5f;" data-c="#2c5f5f" data-n="Teal" onclick="pickColor(this)"></div>
+          <div class="swatch" style="background:#e9c46a;" data-c="#e9c46a" data-n="Yellow" onclick="pickColor(this)"></div>
+        </div>
+        <button class="btn-outline" style="font-size:11px;padding:7px 14px;" onclick="downloadMockup()">↓ Download mockup</button>
+        <p>Share this mockup with your team before ordering</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: DESIGN -->
+  <div class="form-section">
+    <div class="form-section-title"><div class="num">3</div> Design &amp; Print</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div class="upload-box" onclick="document.getElementById('dFile').click()">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          <p>Upload design / mockup<br><small>JPG, PNG, PDF — max 5MB</small></p>
+          <input type="file" id="dFile" accept="image/*,.pdf" style="display:none" onchange="handleUpload(this)">
+        </div>
+        <img id="dPreview" style="display:none;width:100%;max-height:120px;object-fit:contain;border-radius:8px;border:1px solid var(--border);" alt="Design preview">
+        <div id="dPdfNote" style="display:none;font-size:12px;color:#888;background:var(--off);padding:8px 12px;border-radius:6px;"></div>
+        <div class="field"><label>Design file link (optional)</label><input type="text" id="dLink" placeholder="Google Drive / WeTransfer link"></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div>
+          <div class="sec-lbl" style="margin-bottom:10px;">Print location</div>
+          <div class="print-opts" id="printOpts">
+            <div class="popt active" data-v="Front only">Front only</div>
+            <div class="popt" data-v="Back only">Back only</div>
+            <div class="popt" data-v="Front &amp; back">Front &amp; back</div>
+          </div>
+        </div>
+        <div class="field">
+          <label>Design notes / special instructions</label>
+          <textarea id="dNotes" style="height:90px;" placeholder="Logo placement, colours, text, special requests, reference images..."></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 4: SUBMIT -->
+  <div class="form-section" style="background:var(--off);">
+    <div class="info-note" style="margin-bottom:16px;">
+      Payment is required only after order confirmation. We will contact you via WhatsApp to confirm all details first.
+    </div>
+    <button class="btn-gold" style="width:100%;justify-content:center;padding:14px;font-size:15px;" onclick="showPreview()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+      Preview &amp; confirm order
+    </button>
+  </div>
+
+</div>
+</div>
+
+<!-- ORDER PREVIEW -->
+<div class="preview-section" id="previewSection">
+  <div class="preview-label">ORDER SUMMARY — PLEASE CONFIRM BEFORE SENDING</div>
+  <div class="order-card" style="max-width:720px;margin:0 auto;">
+    <div class="ocard-hdr">
+      <div class="ocard-brand">SK Textile</div>
+      <div class="ocard-no" id="pvNo"></div>
+    </div>
+    <div class="ocard-body">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;">
+        <div>
+          <div class="info-title">CUSTOMER</div>
+          <div class="info-row"><span class="lbl">Name</span><span class="val" id="pvName">-</span></div>
+          <div class="info-row"><span class="lbl">WhatsApp</span><span class="val" id="pvWA">-</span></div>
+          <div class="info-row"><span class="lbl">Location</span><span class="val" id="pvCity">-</span></div>
+          <div class="info-row"><span class="lbl">Address</span><span class="val" id="pvAddr">-</span></div>
+        </div>
+        <div>
+          <div class="info-title">PRINT &amp; DESIGN</div>
+          <div class="info-row"><span class="lbl">Print location</span><span class="val" id="pvPrint">-</span></div>
+          <div class="info-row"><span class="lbl">Design file</span><span class="val" id="pvFile">-</span></div>
+          <div class="info-row"><span class="lbl">Notes</span><span class="val" id="pvNotes" style="max-width:180px;text-align:right;font-size:12px;">-</span></div>
+        </div>
+      </div>
+
+      <div class="info-title">ORDER ITEMS</div>
+      <table class="items-table" id="pvItemsTable" style="width:100%;border-collapse:collapse;font-size:12px;">
+        <thead>
+          <tr>
+            <th style="text-align:left;min-width:130px;">Item</th>
+            <th>Type</th>
+            <th>Fabric</th>
+            <th>Colour</th>
+            <th>XS</th><th>S</th><th>M</th><th>L</th><th>XL</th><th>XXL</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody id="pvItemsBody"></tbody>
+        <tfoot>
+          <tr>
+            <td colspan="10" style="padding:8px 10px;font-weight:500;color:var(--navy);background:var(--off);">Grand Total</td>
+            <td style="padding:8px 10px;font-weight:700;color:var(--gold);background:var(--off);text-align:center;" id="pvGrandTotal">0 pcs</td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;">
+        <div>
+          <div class="info-title">DESIGN / MOCKUP</div>
+          <div style="border:1px solid var(--border);border-radius:8px;height:120px;display:flex;align-items:center;justify-content:center;background:var(--off);overflow:hidden;" id="pvDesignBox">
+            <span style="font-size:12px;color:#aaa;">No file uploaded</span>
+          </div>
+        </div>
+        <div>
+          <div class="info-title">MOCKUP PREVIEW</div>
+          <div style="border:1px solid var(--border);border-radius:8px;height:120px;display:flex;align-items:center;justify-content:center;background:var(--off);" id="pvMockup"></div>
+        </div>
+      </div>
+    </div>
+    <div class="ocard-footer">
+      <button class="btn-wa" style="flex:1;justify-content:center;" onclick="finalWA()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Send to WhatsApp
+      </button>
+      <button class="btn-gold" style="flex:1;justify-content:center;display:flex;align-items:center;gap:8px;" onclick="downloadPDF()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download job sheet PDF
+      </button>
+    </div>
+  </div>
+  <div style="font-size:12px;color:#aaa;text-align:center;margin-top:14px;">After sending via WhatsApp, please also send your design file directly in the chat.</div>
+</div>
+
+<button class="wa-bar" onclick="openWA('Hi SK Textile! I would like to place an order.')">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span>Chat with us on WhatsApp · Ampang, Kuala Lumpur</span>
+</button>
+<footer><p>© 2025 <span>SK Textile</span> · Ampang, Kuala Lumpur · Delivery nationwide Malaysia</p></footer>
+
+<script src="js/shared.js"></script>
+<script>
+let itemCount = 0;
+let mockupColor = '#1a1a1a';
+let uploadedDataUrl = null, uploadedFile = null, isPDF = false;
+const TYPES = ['Round Neck','Polo','V-Neck','Muslimah Long Sleeve','Muslimah Polo','Hoodie'];
+const FABRICS = ['Cotton','Polyester','Dri-fit','Cotton Spandex','Cotton Blend','Fleece'];
+const COLORS_LIST = ['Black','White','Navy','Red','Grey','Green','Teal','Yellow','Maroon','Purple','Custom'];
+
+function addItem(presetName) {
+  itemCount++;
+  const id = itemCount;
+  const div = document.createElement('div');
+  div.className = 'item-row';
+  div.id = 'item-' + id;
+  div.innerHTML = `
+    <div class="item-row-header">
+      <span>Item ${id} — <span id="item-label-${id}">${presetName || 'New Item'}</span></span>
+      ${id > 1 ? `<button class="item-toggle" onclick="removeItem(${id})">Remove</button>` : ''}
+    </div>
+    <div class="item-row-body">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;">
+        <div class="field">
+          <label>Item name / description</label>
+          <input type="text" id="iName-${id}" placeholder="e.g. Staff T-shirt, Jersey" value="${presetName||''}" oninput="document.getElementById('item-label-'+${id}).textContent=this.value||'Item ${id}'">
+        </div>
+        <div class="field">
+          <label>Type</label>
+          <select id="iType-${id}" onchange="updateMockupLabel()">
+            ${TYPES.map(t=>`<option${t===presetName?' selected':''}>${t}</option>`).join('')}
+          </select>
+        </div>
+        <div class="field">
+          <label>Fabric</label>
+          <select id="iFab-${id}">
+            ${FABRICS.map(f=>`<option>${f}</option>`).join('')}
+          </select>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div class="field">
+          <label>Shirt colour</label>
+          <select id="iColor-${id}">
+            ${COLORS_LIST.map(c=>`<option>${c}</option>`).join('')}
+          </select>
+        </div>
+        <div class="field">
+          <label>Neck colour</label>
+          <select id="iNeck-${id}">
+            <option>Same as shirt</option>
+            ${COLORS_LIST.map(c=>`<option>${c}</option>`).join('')}
+          </select>
+        </div>
+      </div>
+      <div>
+        <div class="sec-lbl" style="margin-bottom:10px;">Size &amp; Quantity</div>
+        <div class="size-qty-grid">
+          ${SIZES.map(s=>`
+            <div class="sq-item">
+              <label>${s}</label>
+              <input type="number" min="0" value="0" id="iQ-${id}-${s}" oninput="updateTotals()">
+            </div>
+          `).join('')}
+        </div>
+      </div>
+      <div class="item-subtotal" id="iSub-${id}">Subtotal: 0 pcs</div>
+    </div>
+  `;
+  document.getElementById('itemsContainer').appendChild(div);
+  updateTotals();
+}
+
+function removeItem(id) {
+  const el = document.getElementById('item-' + id);
+  if (el) el.remove();
+  updateTotals();
+}
+
+function updateTotals() {
+  let grand = 0;
+  for (let i = 1; i <= itemCount; i++) {
+    const el = document.getElementById('item-' + i);
+    if (!el) continue;
+    let sub = 0;
+    SIZES.forEach(s => { sub += parseInt(document.getElementById(`iQ-${i}-${s}`)?.value || 0); });
+    grand += sub;
+    const subEl = document.getElementById('iSub-' + i);
+    if (subEl) subEl.textContent = 'Subtotal: ' + sub + ' pcs';
+  }
+  document.getElementById('grandTotal').textContent = grand + ' pcs';
+}
+
+function pickColor(el) {
+  document.querySelectorAll('.swatch').forEach(s => s.classList.remove('active'));
+  el.classList.add('active');
+  mockupColor = el.dataset.c;
+  updateMockupPreview();
+}
+
+function updateMockupPreview() {
+  document.getElementById('mockupSvg').innerHTML = shirtSVG(mockupColor, 'SK Textile', 130, 141);
+}
+
+function updateMockupLabel() { updateMockupPreview(); }
+
+function downloadMockup() {
+  const svg = shirtSVG(mockupColor, 'SK Textile', 300, 326);
+  const blob = new Blob([svg], { type: 'image/svg+xml' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'SK-Textile-Mockup.svg';
+  a.click(); URL.revokeObjectURL(url);
+}
+
+document.getElementById('printOpts').addEventListener('click', e => {
+  const o = e.target.closest('.popt');
+  if (!o) return;
+  document.querySelectorAll('.popt').forEach(x => x.classList.remove('active'));
+  o.classList.add('active');
+});
+
+function handleUpload(input) {
+  const file = input.files[0];
+  if (!file) return;
+  uploadedFile = file;
+  isPDF = file.type === 'application/pdf';
+  if (isPDF) {
+    document.getElementById('dPreview').style.display = 'none';
+    const n = document.getElementById('dPdfNote');
+    n.style.display = 'block';
+    n.textContent = 'PDF selected: ' + file.name;
+    uploadedDataUrl = null;
+  } else {
+    document.getElementById('dPdfNote').style.display = 'none';
+    const r = new FileReader();
+    r.onload = e => {
+      uploadedDataUrl = e.target.result;
+      const img = document.getElementById('dPreview');
+      img.src = uploadedDataUrl; img.style.display = 'block';
+    };
+    r.readAsDataURL(file);
+  }
+}
+
+function getActiveItems() {
+  const items = [];
+  for (let i = 1; i <= itemCount; i++) {
+    const el = document.getElementById('item-' + i);
+    if (!el) continue;
+    const sizes = {};
+    let total = 0;
+    SIZES.forEach(s => {
+      const q = parseInt(document.getElementById(`iQ-${i}-${s}`)?.value || 0);
+      sizes[s] = q; total += q;
+    });
+    if (total === 0) continue;
+    items.push({
+      name: document.getElementById(`iName-${i}`)?.value || 'Item ' + i,
+      type: document.getElementById(`iType-${i}`)?.value,
+      fab:  document.getElementById(`iFab-${i}`)?.value,
+      color: document.getElementById(`iColor-${i}`)?.value,
+      neck: document.getElementById(`iNeck-${i}`)?.value,
+      sizes, total
+    });
+  }
+  return items;
+}
+
+function showPreview() {
+  const name = document.getElementById('cName').value.trim();
+  const wa   = document.getElementById('cWA').value.trim();
+  if (!name || !wa) { alert('Please fill in customer name and WhatsApp number.'); return; }
+  const items = getActiveItems();
+  if (items.length === 0) { alert('Please enter quantity for at least one item.'); return; }
+
+  const no = genOrderNo();
+  document.getElementById('pvNo').textContent = 'ORDER #' + no;
+  document.getElementById('pvName').textContent = name;
+  document.getElementById('pvWA').textContent = wa;
+  document.getElementById('pvCity').textContent = document.getElementById('cCity').value || '-';
+  document.getElementById('pvAddr').textContent = document.getElementById('cAddr').value || '-';
+  document.getElementById('pvPrint').textContent = document.querySelector('.popt.active')?.dataset.v || '-';
+  document.getElementById('pvFile').textContent = uploadedFile ? uploadedFile.name : (document.getElementById('dLink').value || 'None');
+  document.getElementById('pvNotes').textContent = document.getElementById('dNotes').value || '-';
+
+  let grandTotal = 0;
+  const tbody = document.getElementById('pvItemsBody');
+  tbody.innerHTML = items.map(it => {
+    grandTotal += it.total;
+    return `<tr>
+      <td style="padding:8px 10px;font-weight:500;">${it.name}</td>
+      <td style="padding:8px 10px;text-align:center;">${it.type}</td>
+      <td style="padding:8px 10px;text-align:center;">${it.fab}</td>
+      <td style="padding:8px 10px;text-align:center;">${it.color}</td>
+      ${SIZES.map(s=>`<td class="size-cell" style="padding:8px 10px;text-align:center;">${it.sizes[s]||0}</td>`).join('')}
+      <td style="padding:8px 10px;text-align:center;font-weight:600;color:var(--navy);">${it.total}</td>
+    </tr>`;
+  }).join('');
+  document.getElementById('pvGrandTotal').textContent = grandTotal + ' pcs';
+
+  const db = document.getElementById('pvDesignBox');
+  if (uploadedDataUrl) db.innerHTML = `<img src="${uploadedDataUrl}" style="max-width:100%;max-height:100%;object-fit:contain;">`;
+  else if (isPDF && uploadedFile) db.innerHTML = `<div style="text-align:center;"><div style="font-size:24px;">📄</div><div style="font-size:11px;color:#888;margin-top:4px;">${uploadedFile.name}</div></div>`;
+  else db.innerHTML = '<span style="font-size:12px;color:#aaa;">No file uploaded</span>';
+
+  document.getElementById('pvMockup').innerHTML = shirtSVG(mockupColor, 'SK Textile', 90, 98);
+
+  const ps = document.getElementById('previewSection');
+  ps.style.display = 'block';
+  ps.scrollIntoView({ behavior: 'smooth' });
+}
+
+function finalWA() {
+  const items = getActiveItems();
+  const no = document.getElementById('pvNo').textContent;
+  const name = document.getElementById('pvName').textContent;
+  const wa   = document.getElementById('pvWA').textContent;
+  const city = document.getElementById('pvCity').textContent;
+  const addr = document.getElementById('pvAddr').textContent;
+  const print= document.getElementById('pvPrint').textContent;
+  const notes= document.getElementById('pvNotes').textContent;
+  const fileNote = uploadedFile ? (isPDF ? 'PDF: '+uploadedFile.name+' (will send separately)' : 'Design image (will send separately)') : (document.getElementById('dLink').value || 'None');
+
+  let itemStr = items.map((it,i) => {
+    const sizeStr = SIZES.filter(s=>it.sizes[s]>0).map(s=>s+'×'+it.sizes[s]).join('  ');
+    return `Item ${i+1}: ${it.name}\nType: ${it.type} | Fabric: ${it.fab} | Colour: ${it.color} | Neck: ${it.neck}\nSizes: ${sizeStr} | Subtotal: ${it.total} pcs`;
+  }).join('\n\n');
+
+  const grandTotal = items.reduce((s,it)=>s+it.total,0);
+  const msg = `*${no} — SK Textile*\n\n*Customer*\nName: ${name}\nWhatsApp: ${wa}\nLocation: ${city}\nAddress: ${addr}\n\n*Order Items*\n${itemStr}\n\n*Grand Total: ${grandTotal} pcs*\n\n*Print location:* ${print}\n*Design:* ${fileNote}\n*Notes:* ${notes}`;
+  openWA(msg);
+}
+
+function downloadPDF() {
+  const { jsPDF } = window.jspdf;
+  if (!jsPDF) { alert('PDF loading, please try again.'); return; }
+  const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+  const navy=[26,39,68], gold=[201,168,76], off=[248,247,244];
+  doc.setFillColor(...navy); doc.rect(0,0,210,30,'F');
+  doc.setTextColor(...gold); doc.setFontSize(20); doc.setFont('helvetica','bold');
+  doc.text('SK Textile',14,13);
+  doc.setFontSize(9); doc.setFont('helvetica','normal');
+  doc.text('CUSTOM T-SHIRT PRINTING · KUALA LUMPUR · MALAYSIA',14,21);
+  doc.setTextColor(180,180,180);
+  doc.text(document.getElementById('pvNo').textContent,196,13,{align:'right'});
+  doc.text(new Date().toLocaleDateString('en-MY'),196,21,{align:'right'});
+  doc.setFillColor(...gold); doc.rect(0,30,210,2,'F');
+  let y = 38;
+  const addSection = (title) => {
+    doc.setFillColor(...navy); doc.rect(14,y,182,7,'F');
+    doc.setTextColor(...gold); doc.setFontSize(8); doc.setFont('helvetica','bold');
+    doc.text(title,16,y+5); y+=9;
+  };
+  const addRow = (label, value) => {
+    doc.setTextColor(100,100,100); doc.setFont('helvetica','normal'); doc.setFontSize(9);
+    doc.text(label,16,y);
+    doc.setTextColor(30,30,30); doc.setFont('helvetica','bold');
+    const lines = doc.splitTextToSize(String(value), 110);
+    doc.text(lines,90,y); y+= lines.length*5+2;
+  };
+  addSection('CUSTOMER INFORMATION');
+  addRow('Name', document.getElementById('pvName').textContent);
+  addRow('WhatsApp', document.getElementById('pvWA').textContent);
+  addRow('Location', document.getElementById('pvCity').textContent);
+  addRow('Address', document.getElementById('pvAddr').textContent);
+  y+=4;
+  addSection('PRINT & DESIGN');
+  addRow('Print location', document.getElementById('pvPrint').textContent);
+  addRow('Design file', document.getElementById('pvFile').textContent);
+  addRow('Notes', document.getElementById('pvNotes').textContent);
+  y+=4;
+  addSection('ORDER ITEMS');
+  const items = getActiveItems();
+  items.forEach((it,idx) => {
+    doc.setFillColor(...off); doc.rect(14,y,182,7,'F');
+    doc.setTextColor(26,39,68); doc.setFont('helvetica','bold'); doc.setFontSize(9);
+    doc.text(`${idx+1}. ${it.name}`,16,y+5); y+=9;
+    doc.setTextColor(80,80,80); doc.setFont('helvetica','normal'); doc.setFontSize(8);
+    doc.text(`Type: ${it.type}  |  Fabric: ${it.fab}  |  Colour: ${it.color}  |  Neck: ${it.neck}`,16,y); y+=6;
+    const cw=26;
+    SIZES.forEach((s,i)=>{doc.setFont('helvetica','bold');doc.setTextColor(80,80,80);doc.text(s,16+i*cw,y);});
+    y+=5;
+    SIZES.forEach((s,i)=>{doc.setFont('helvetica','normal');doc.setTextColor(30,30,30);doc.text(String(it.sizes[s]||0),16+i*cw,y);});
+    doc.setFont('helvetica','bold');doc.setTextColor(...navy);doc.text('Subtotal: '+it.total+' pcs',192,y,{align:'right'});
+    y+=10;
+  });
+  const grand = items.reduce((s,it)=>s+it.total,0);
+  doc.setFillColor(...navy); doc.rect(14,y,182,8,'F');
+  doc.setTextColor(...gold); doc.setFont('helvetica','bold'); doc.setFontSize(10);
+  doc.text('GRAND TOTAL: '+grand+' pcs',192,y+5.5,{align:'right'});
+  y+=12;
+  if (uploadedDataUrl) {
+    addSection('DESIGN / MOCKUP');
+    try { doc.addImage(uploadedDataUrl,'JPEG',14,y,70,52); y+=58; } catch(e){}
+  }
+  doc.setFillColor(...navy); doc.rect(0,278,210,19,'F');
+  doc.setTextColor(...gold); doc.setFontSize(8); doc.setFont('helvetica','normal');
+  doc.text('SK Textile · Ampang, Kuala Lumpur · Generated '+new Date().toLocaleString('en-MY'),105,289,{align:'center'});
+  doc.save('SK-Textile-'+document.getElementById('pvNo').textContent+'.pdf');
+}
+
+// Init
+updateMockupPreview();
+// Check if coming from catalog
+const urlParams = new URLSearchParams(window.location.search);
+const productId = parseInt(urlParams.get('product'));
+if (productId) {
+  const p = PRODUCTS.find(x => x.id === productId);
+  if (p) { addItem(p.type); }
+  else { addItem(); }
+} else {
+  addItem();
+}
+</script>
+</body>
+</html>
