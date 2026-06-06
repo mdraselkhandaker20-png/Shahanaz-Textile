@@ -2,7 +2,7 @@
    SK TEXTILE — Shared JS Utilities
    ============================================= */
 
-const WA_NUMBER = '60123456789'; // ← Replace with your WhatsApp number
+const WA_NUMBER = '+601151663724'; // ← Replace with your WhatsApp number
 
 const SIZES = ['XS','S','M','L','XL','XXL'];
 const VIEWS = ['Front','Back','Left','Right'];
