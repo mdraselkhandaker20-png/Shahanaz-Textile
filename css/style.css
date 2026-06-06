@@ -41,7 +41,7 @@ nav {
 .nav-logo { color: var(--gold); font-family: 'Playfair Display', serif; font-size: 21px; font-weight: 600; letter-spacing: 1px; text-decoration: none; }
 .nav-logo span { color: #aab; font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 300; letter-spacing: 3px; display: block; margin-top: 2px; }
 .nav-links { display: flex; gap: 24px; align-items: center; }
-.nav-links a { color: #ccd; font-size: 13px; text-decoration: none; letter-spacing: 0.3px; transition: color .2s; }
+.nav-links a { color: #ccd; font-size: 13px; text-decoration: none; letter-spacing: 0.3px; transition: all; }
 .nav-links a:hover, .nav-links a.active { color: var(--gold); }
 .nav-wa {
   background: var(--gold); color: var(--navy) !important;
@@ -280,7 +280,7 @@ footer span { color: var(--gold); }
 @media (max-width: 700px) {
   nav { padding: 1rem 1rem; flex-wrap: wrap; gap: 0.5rem; }
   .nav-links { gap: 0.8rem; flex-wrap: wrap; }
-  .nav-links a { font-size: 1rem; letter-spacing: 1px; }
+  .nav-links a { font-size: 1rem; letter-spacing: 1px; padding-top: 2px; }
   .hero { padding: 48px 16px; }
   .hero h1 { font-size: 32px; }
   .section { padding: 36px 16px; }
