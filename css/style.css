@@ -318,11 +318,4 @@ footer span { color: var(--gold); }
   .filter-btn { font-size: 11px; padding: 6px 12px; }
 }
 
-/* Preview section mobile fix */
-  .preview-section { padding: 16px !important; }
-  .ocard-body { padding: 16px !important; }
-  .ocard-body > div { display: flex !important; flex-direction: column !important; }
-  .ocard-footer { flex-direction: column !important; gap: 8px !important; }
-  .ocard-footer button, .ocard-footer a { width: 100% !important; }
-  .items-table { font-size: 10px !important; }
-  .items-table th, .items-table td { padding: 5px 4px !important; }
+  
