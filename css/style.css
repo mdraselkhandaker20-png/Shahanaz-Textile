@@ -283,8 +283,8 @@ footer span { color: var(--gold); }
 
 /* ── MOBILE ── */
 @media (max-width: 700px) {
-  nav { padding: 12px 16px; }
-  .nav-links .hide-mobile { display: none; }
+  nav { padding: 12px 16px; flex-wrap: wrap; }
+  .nav-links { display: none; }
   .hero { padding: 48px 16px; }
   .hero h1 { font-size: 32px; }
   .section { padding: 36px 16px; }
