@@ -284,7 +284,9 @@ footer span { color: var(--gold); }
 /* ── MOBILE ── */
 @media (max-width: 700px) {
   nav { padding: 12px 16px; flex-wrap: nowrap; }
-  .nav-links { gap: 12px; }
+  .nav-links { gap: 10px; }
+  .nav-links a { font-size: 11px; letter-spacing: 0; }
+  .nav-wa { padding: 6px 10px; font-size: 11px; }
   .hero { padding: 48px 16px; }
   .hero h1 { font-size: 32px; }
   .section { padding: 36px 16px; }
@@ -293,38 +295,26 @@ footer span { color: var(--gold); }
   .order-preview-wrap { padding: 0 16px 32px; }
   .wa-bar { padding: 14px 16px; }
   footer { padding: 20px 16px; }
-}
-  /* Form sections */
+
+  /* Form */
   .form-section { padding: 20px 16px !important; }
   .form-wrap { padding: 16px !important; }
   .form-section > div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
   .item-row-body > div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
-
-  /* Size grid 6 col → 3 col */
   .size-qty-grid { grid-template-columns: repeat(3,1fr) !important; }
-
-  /* Mockup panel */
   .mockup-panel { width: 100% !important; }
-
-  /* Preview card */
   .ocard-body > div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
   .ocard-footer { flex-direction: column !important; }
 
-  /* All 2/3 col grids → 1 col */
+  /* All grids → 1 col */
   div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
   div[style*="grid-template-columns:1fr 1fr 1fr"] { grid-template-columns: 1fr !important; }
   div[style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
   div[style*="grid-template-columns: 1fr 1fr 1fr"] { grid-template-columns: 1fr !important; }
 
-  /* Catalog nav fix */
-  nav { justify-content: space-between; flex-wrap: nowrap; }
-
-  /* Catalog product actions */
+  /* Catalog */
   .prod-actions { flex-direction: column; }
-  .prod-actions a,
-  .prod-actions button { width: 100%; justify-content: center; }
-
-  /* Catalog filter bar */
+  .prod-actions a, .prod-actions button { width: 100%; justify-content: center; }
   .filter-bar { gap: 6px; }
   .filter-btn { font-size: 11px; padding: 6px 12px; }
 }
