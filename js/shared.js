@@ -260,7 +260,7 @@ function injectNav(activePage) {
     { href: 'order.html', label: 'Order Form' },
     { href: 'faq.html', label: 'FAQ' },
     { href: 'about.html', label: 'About' },
-    { href: 'index.html#contact', label: 'Contact' },
+    { href: 'contact.html', label: 'Contact' },
   ];
   const links = pages.map(p =>
     `<a href="${p.href}"${p.label === activePage ? ' class="active"' : ''}>${p.label}</a>`
