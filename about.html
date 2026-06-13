@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Shahanaz Textile</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+.about-header{background:var(--navy);padding:60px 80px;border-bottom:3px solid var(--gold);}
+.about-header h1{font-family:'Playfair Display',serif;font-size:44px;font-weight:500;color:var(--white);line-height:1.2;}
+.about-header h1 em{color:var(--gold);font-style:normal;}
+.about-header p{color:var(--muted);font-size:15px;margin-top:12px;max-width:520px;line-height:1.7;}
+.story-section{padding:60px 80px;background:var(--white);}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+.story-text{display:flex;flex-direction:column;gap:20px;}
+.story-text p{font-size:15px;color:#444;line-height:1.8;}
+.story-text p em{color:var(--navy);font-style:italic;font-family:'Playfair Display',serif;font-size:17px;}
+.gold-line{width:48px;height:3px;background:var(--gold);border-radius:2px;}
+.vision-card{background:var(--navy);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:20px;}
+.vision-card h3{font-family:'Playfair Display',serif;font-size:22px;color:var(--gold);font-weight:500;}
+.vision-card p{font-size:14px;color:var(--muted);line-height:1.7;}
+.vision-item{display:flex;gap:14px;align-items:flex-start;}
+.vision-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:6px;}
+.vision-item p{font-size:14px;color:#ccd;line-height:1.6;}
+.values-section{padding:60px 80px;background:var(--off);}
+.values-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:28px;}
+.value-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:28px 24px;}
+.value-icon{font-size:32px;margin-bottom:12px;}
+.value-card h3{font-size:15px;font-weight:500;color:var(--navy);margin-bottom:8px;}
+.value-card p{font-size:13px;color:#666;line-height:1.6;}
+.founder-section{padding:60px 80px;background:var(--navy);}
+.founder-quote{max-width:640px;margin:0 auto;text-align:center;}
+.founder-quote blockquote{font-family:'Playfair Display',serif;font-size:22px;color:var(--white);font-style:italic;line-height:1.6;margin-bottom:20px;}
+.founder-quote blockquote em{color:var(--gold);font-style:normal;}
+.founder-quote cite{font-size:13px;color:var(--muted);letter-spacing:1px;}
+@media(max-width:700px){
+  .about-header{padding:40px 16px;}
+  .about-header h1{font-size:30px;}
+  .story-section,.values-section,.founder-section{padding:40px 16px;}
+  .story-grid{grid-template-columns:1fr;gap:32px;}
+}
+</style>
+</head>
+<body>
+
+<div class="about-header">
+  <div class="eyebrow">Our story</div>
+  <h1>Built on a dream.<br><em>Named for a mother.</em></h1>
+  <p>Shahanaz Textile is more than a business — it is a promise kept to a family, and a dream that started long before the first stitch.</p>
+</div>
+
+<section class="story-section">
+  <div class="story-grid">
+    <div class="story-text">
+      <div class="gold-line"></div>
+      <p>Our parents worked hard all their lives. Through their jobs, they built a home, raised a family, and put their children through school and university. We grew up watching them — their dedication, their sacrifices, their quiet determination.</p>
+      <p>When a teacher once asked what our dream was, the answer came without hesitation: <em>"Garments. A factory. And salaries paid on the 1st of every month."</em></p>
+      <p>Because we know what it means when a salary is late. We have seen it. We will never let that happen to the people who work with us.</p>
+      <p>In 2026, we took the first step. We named this business after our mother — <strong style="color:var(--navy);">Shahanaz</strong> — because everything we are, we owe to her.</p>
+      <p>The factory is still a dream in progress. But the office is real. The work is real. And the vision is very much alive.</p>
+    </div>
+    <div>
+      <div class="vision-card">
+        <h3>The dream ahead</h3>
+        <p>We are building toward something bigger — a full garments industry, rooted in Narshingdi, Bangladesh.</p>
+        <div style="display:flex;flex-direction:column;gap:14px;margin-top:8px;">
+          <div class="vision-item"><div class="vision-dot"></div><p>A factory next to home — where quality is made, not just promised</p></div>
+          <div class="vision-item"><div class="vision-dot"></div><p>Salaries paid on the 1st of every month, without exception</p></div>
+          <div class="vision-item"><div class="vision-dot"></div><p>Jobs for people in our community</p></div>
+          <div class="vision-item"><div class="vision-dot"></div><p>A brand that carries our mother's name with pride</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="values-section">
+  <div class="eyebrow">What we stand for</div>
+  <div class="section-title">Our values</div>
+  <div class="values-grid">
+    <div class="value-card">
+      <div class="value-icon">🤝</div>
+      <h3>Trust first</h3>
+      <p>Payment only after confirmation. We send a full job sheet before production begins — no surprises, no pressure.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-icon">✂️</div>
+      <h3>Quality guaranteed</h3>
+      <p>Damaged or wrong items are replaced. Always. We stand behind every piece we produce.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-icon">⏱️</div>
+      <h3>On time, every time</h3>
+      <p>3–7 day delivery across Bangladesh. We respect your time and your deadlines.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-icon">💛</div>
+      <h3>Family values</h3>
+      <p>This business was built by a family, for families and communities. We treat every customer like one of our own.</p>
+    </div>
+  </div>
+</section>
+
+<section class="founder-section">
+  <div class="founder-quote">
+    <div class="eyebrow" style="color:var(--gold);text-align:center;margin-bottom:20px;">Our promise</div>
+    <blockquote>"We will build something our parents are proud of — and we will pay our workers on the <em>1st of every month.</em>"</blockquote>
+    <cite>— Shahanaz Textile, Narshingdi, Bangladesh · Est. 2026</cite>
+  </div>
+</section>
+
+<script src="js/shared.js"></script>
+<script>
+injectNav('About');
+injectWABar('Hi Shahanaz Textile! I would like to learn more about your business.');
+injectFooter();
+</script>
+</body>
+</html>

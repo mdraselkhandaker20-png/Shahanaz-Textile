@@ -11,7 +11,8 @@ const PRODUCTS = [
   {
     id: 1,
     name: 'Classic Crew Tee',
-    img: 'amg.png',
+    img: 'images/amg.png',
+    imgBack:  'images/amg-back.png',
     fab: '100% Cotton',
     desc: 'Everyday round neck tee — perfect for corporate, event, or casual wear. Heavyweight cotton, pre-shrunk for lasting fit.',
     min: 10,
