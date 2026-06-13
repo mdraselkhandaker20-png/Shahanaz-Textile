@@ -258,6 +258,8 @@ function injectNav(activePage) {
     { href: 'catalog.html', label: 'Catalog' },
     { href: 'index.html#custom', label: 'Custom Order' },
     { href: 'order.html', label: 'Order Form' },
+    { href: 'faq.html', label: 'FAQ' },
+    { href: 'about.html', label: 'About' },
     { href: 'index.html#contact', label: 'Contact' },
   ];
   const links = pages.map(p =>
