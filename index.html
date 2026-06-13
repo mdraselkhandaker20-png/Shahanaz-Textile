@@ -11,13 +11,23 @@
 <!-- NAV injected by JS -->
 
 <!-- HERO -->
-<section class="hero">
-  <div class="eyebrow">Quality Apparel · Wholesale &amp; Custom · Bangladesh</div>
-  <h1>Your design.<br><em>Our craft.</em></h1>
-  <p>Custom fabric & garments printing for individuals, teams &amp; businesses. Browse our catalog or bring your own design — we handle everything.</p>
-  <div class="hero-btns">
-    <a href="catalog.html" class="btn-gold">Browse Catalog</a>
-    <a href="#custom" class="btn-outline">Custom Order</a>
+<section class="hero-slider">
+  <div class="hero-slides">
+    <div class="hero-slide active" style="background-image:url('images/hero1.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('images/hero2.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('images/hero3.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('images/hero4.jpg')"></div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="eyebrow">Quality Apparel · Wholesale &amp; Custom · Bangladesh</div>
+    <h1>Your design.<br><em>Our craft.</em></h1>
+    <p>Custom fabric &amp; garments printing for individuals, teams &amp; businesses. Browse our catalog or bring your own design — we handle everything.</p>
+    <div class="hero-btns">
+      <a href="catalog.html" class="btn-gold">Browse Catalog</a>
+      <a href="#custom" class="btn-outline">Custom Order</a>
+    </div>
+    <div class="hero-dots" id="heroDots"></div>
   </div>
 </section>
 
@@ -156,6 +166,27 @@ document.getElementById('featuredGrid').innerHTML = PRODUCTS.slice(0, 4).map(p =
     </div>
   </div>
 `).join('');
+// Hero slider
+const slides = document.querySelectorAll('.hero-slide');
+const dotsWrap = document.getElementById('heroDots');
+let current = 0;
+
+slides.forEach((_,i) => {
+  const dot = document.createElement('button');
+  dot.className = 'hero-dot' + (i===0?' active':'');
+  dot.onclick = () => goTo(i);
+  dotsWrap.appendChild(dot);
+});
+
+function goTo(n) {
+  slides[current].classList.remove('active');
+  document.querySelectorAll('.hero-dot')[current].classList.remove('active');
+  current = n;
+  slides[current].classList.add('active');
+  document.querySelectorAll('.hero-dot')[current].classList.add('active');
+}
+
+setInterval(() => goTo((current+1) % slides.length), 4000);
 </script>
 </body>
 </html>
